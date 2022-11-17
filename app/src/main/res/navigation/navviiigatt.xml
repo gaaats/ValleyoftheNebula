@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navviiigatt"
+    app:startDestination="@id/enteringFragment">
+
+    <fragment
+        android:id="@+id/vhelFragment"
+        android:name="com.playgendary.sportmasterss.gogogo.VhelFragment"
+        android:label="fragment_vhel"
+        tools:layout="@layout/fragment_vhel" />
+    <fragment
+        android:id="@+id/machineFragment"
+        android:name="com.playgendary.sportmasterss.gogogo.MachineFragment"
+        android:label="fragment_machine"
+        tools:layout="@layout/fragment_machine" />
+    <fragment
+        android:id="@+id/enteringFragment"
+        android:name="com.playgendary.sportmasterss.gogogo.EnteringFragment"
+        android:label="fragment_entering"
+        tools:layout="@layout/fragment_entering" >
+        <action
+            android:id="@+id/action_enteringFragment_to_vhelFragment"
+            app:destination="@id/vhelFragment" />
+        <action
+            android:id="@+id/action_enteringFragment_to_machineFragment"
+            app:destination="@id/machineFragment" />
+    </fragment>
+</navigation>

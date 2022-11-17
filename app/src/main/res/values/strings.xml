@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Valley of the Nebula</string>
+    <string name="image_chooser">Pick Your Image</string>
+
+    <string name="drgtdfrgtgtapp_name_author">© Valley of the Nebula</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
