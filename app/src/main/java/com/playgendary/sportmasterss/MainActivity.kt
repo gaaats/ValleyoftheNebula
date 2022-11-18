@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.appsflyer.AppsFlyerConversionListener
 import com.appsflyer.AppsFlyerLib
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import com.google.android.material.snackbar.Snackbar
 import com.orhanobut.hawk.Hawk
 import com.playgendary.sportmasterss.GoodLikeManClass.Companion.C1
 import com.playgendary.sportmasterss.GoodLikeManClass.Companion.MAIN_ID
@@ -77,8 +78,14 @@ class MainActivity : AppCompatActivity() {
             .create(SomeInterface::class.java)
 
         val linkView = retroBuildTwo.getDataDev().body()?.view
+        //вот здесь уже прилетает null
         Log.d("Data", "getDataDev: $linkView")
         val appsChecker = retroBuildTwo.getDataDev().body()?.appsChecker
+        //и вот здесь уже прилетает null
+
+        GoodLikeManClass.prteresult = appsChecker?: "nulllllll"
+        GoodLikeManClass.prteresultLinkSasha = linkView ?: "vieeeev nuuul"
+
         Hawk.put(appsCheck, appsChecker)
 
         Hawk.put(link, linkView)
@@ -101,7 +108,13 @@ class MainActivity : AppCompatActivity() {
         var naming: String? = Hawk.get(C1)
 
         getAdId()
+//        Snackbar.make(
+//            bindMainAct.root, "pretest ${appsCh}",
+//            Snackbar.LENGTH_LONG
+//        ).show()
+//        GoodLikeManClass.prteresult = appsCh
         if (appsCh == "1") {
+            Hawk.put(appsCheck, appsCh)
             Log.d("lolo", " in 1")
             val executorService = Executors.newSingleThreadScheduledExecutor()
             executorService.scheduleAtFixedRate({

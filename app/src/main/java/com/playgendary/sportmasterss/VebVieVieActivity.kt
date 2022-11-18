@@ -38,10 +38,10 @@ class VebVieVieActivity : AppCompatActivity() {
         setContentView(hrfghrdssxc.root)
 
         jgidhgjdk = hrfghrdssxc.vwvw
-        Snackbar.make(
-            hrfghrdssxc.root, "Loading...",
-            Snackbar.LENGTH_LONG
-        ).show()
+//        Snackbar.make(
+//            hrfghrdssxc.root, "Loading...",
+//            Snackbar.LENGTH_LONG
+//        ).show()
 
 
         val cmngcmng = CookieManager.getInstance()
@@ -290,12 +290,23 @@ class VebVieVieActivity : AppCompatActivity() {
             aft =
                 "$linkAB$subOne$cpOne&$one$afId&$thrhtrhtrhtrht$mainId&$fofofofofofofofofo$pack&$fififififififififif$kiokjjlikjhmkij&$sisisisifsisis$lololololololo"
             pushToOneSignal(afId.toString())
+
+//            Log.d("Test Hawk", Hawk.get("appsChecker"))
+            Log.d("Test Hawk", "link is ${aft}")
+            Log.d("Test Hawk", checkFly)
+
+
+
         } else {
             aft =
                 "$linkAB$one$myTrID&$thrhtrhtrhtrht$myInstId&$fofofofofofofofofo$pack&$fififififififififif$kiokjjlikjhmkij&$sisisisifsisis$lololololololo"
             pushToOneSignal(myTrID.toString())
         }
-        Log.d("Test Hawk", Hawk.get("appsChecker"))
+        Snackbar.make(
+            hrfghrdssxc.root, "pretest ${GoodLikeManClass.prteresultLinkSasha}",
+            Snackbar.LENGTH_LONG
+        ).show()
+
 
 
         Log.d("TESTAG", "Test Result $aft")
