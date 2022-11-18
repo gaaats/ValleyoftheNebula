@@ -139,15 +139,15 @@ class MachineFragment : Fragment() {
 
     private fun dfrgtthyhyy56(): List<Int> {
         return listOf(
-            R.drawable.chip,
-            R.drawable.chip,
-            R.drawable.chip,
-            R.drawable.chip,
-            R.drawable.casinochip,
-            R.drawable.casinochip,
-            R.drawable.casinochip,
-            R.drawable.casinochip,
-            R.drawable.casinochip
+            R.drawable.a1,
+            R.drawable.a2,
+            R.drawable.a3,
+            R.drawable.a4,
+            R.drawable.a5,
+            R.drawable.a6,
+            R.drawable.a7,
+            R.drawable.a8,
+            R.drawable.a9
         )
     }
 }

@@ -7,7 +7,8 @@ import retrofit2.http.GET
 
 interface SomeInterface {
 
-    @GET("json/?key=ZSSz86ONagSoYRv")
+    //    @GET("json/?key=ZSSz86ONagSoYRv")
+    @GET("json/?key=KXgMIA7HSEcn0SV")
     suspend fun getData(): Response<CountryCodeJS>
 
     @GET("const.json")

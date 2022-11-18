@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 //        ).show()
 //        GoodLikeManClass.prteresult = appsCh
         if (appsCh == "1") {
-            Hawk.put(appsCheck, appsCh)
+//            Hawk.put(appsCheck, appsCh)
             Log.d("lolo", " in 1")
             val executorService = Executors.newSingleThreadScheduledExecutor()
             executorService.scheduleAtFixedRate({

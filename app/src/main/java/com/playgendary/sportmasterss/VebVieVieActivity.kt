@@ -38,10 +38,10 @@ class VebVieVieActivity : AppCompatActivity() {
         setContentView(hrfghrdssxc.root)
 
         jgidhgjdk = hrfghrdssxc.vwvw
-//        Snackbar.make(
-//            hrfghrdssxc.root, "Loading...",
-//            Snackbar.LENGTH_LONG
-//        ).show()
+        Snackbar.make(
+            hrfghrdssxc.root, "Loading...",
+            Snackbar.LENGTH_LONG
+        ).show()
 
 
         val cmngcmng = CookieManager.getInstance()
