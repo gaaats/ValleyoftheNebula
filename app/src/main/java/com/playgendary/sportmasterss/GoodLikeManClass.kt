@@ -8,8 +8,8 @@ import java.util.*
 
 class GoodLikeManClass: Application() {
     companion object {
-        var prteresult = ""
-        var prteresultLinkSasha = ""
+//        var prteresult = ""
+//        var prteresultLinkSasha = ""
 
         const val dfwthyhyj = "43341098911299610355"
         const val jglfkdkdkgjd = "5d497a48-8705-492c-bbb2-dd703d7fdd9f"

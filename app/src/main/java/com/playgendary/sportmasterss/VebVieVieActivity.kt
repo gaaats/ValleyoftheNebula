@@ -283,8 +283,8 @@ class VebVieVieActivity : AppCompatActivity() {
 
         val kiokjjlikjhmkij = Build.VERSION.RELEASE
 
-//        val linkAB: String = Hawk.get(link)
-        val linkAB: String = fifififiififififiififififiififififi + seccscdssdd
+        val linkAB: String = Hawk.get(link)
+//        val linkAB: String = fifififiififififiififififiififififi + seccscdssdd
         var aft = ""
         if (checkFly == "1"){
             aft =
@@ -302,10 +302,10 @@ class VebVieVieActivity : AppCompatActivity() {
                 "$linkAB$one$myTrID&$thrhtrhtrhtrht$myInstId&$fofofofofofofofofo$pack&$fififififififififif$kiokjjlikjhmkij&$sisisisifsisis$lololololololo"
             pushToOneSignal(myTrID.toString())
         }
-        Snackbar.make(
-            hrfghrdssxc.root, "pretest ${GoodLikeManClass.prteresultLinkSasha}",
-            Snackbar.LENGTH_LONG
-        ).show()
+//        Snackbar.make(
+//            hrfghrdssxc.root, "pretest ${GoodLikeManClass.prteresultLinkSasha}",
+//            Snackbar.LENGTH_LONG
+//        ).show()
 
 
 

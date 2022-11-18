@@ -83,8 +83,8 @@ class MainActivity : AppCompatActivity() {
         val appsChecker = retroBuildTwo.getDataDev().body()?.appsChecker
         //и вот здесь уже прилетает null
 
-        GoodLikeManClass.prteresult = appsChecker?: "nulllllll"
-        GoodLikeManClass.prteresultLinkSasha = linkView ?: "vieeeev nuuul"
+//        GoodLikeManClass.prteresult = appsChecker?: "nulllllll"
+//        GoodLikeManClass.prteresultLinkSasha = linkView ?: "vieeeev nuuul"
 
         Hawk.put(appsCheck, appsChecker)
 
