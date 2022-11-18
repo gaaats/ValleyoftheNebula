@@ -46,6 +46,8 @@ class VhelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         try {
+            binding.root.background.alpha = 210
+
             initExitBtnfrgttg()
             rfrgtyhyyju538()
             dfeghjk()

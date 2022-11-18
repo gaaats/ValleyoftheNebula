@@ -11,7 +11,6 @@ import com.orhanobut.hawk.Hawk
 import com.playgendary.sportmasterss.GoodLikeManClass.Companion.C1
 import com.playgendary.sportmasterss.GoodLikeManClass.Companion.MAIN_ID
 import com.playgendary.sportmasterss.GoodLikeManClass.Companion.appsCheck
-import com.playgendary.sportmasterss.GoodLikeManClass.Companion.apps_code
 import com.playgendary.sportmasterss.GoodLikeManClass.Companion.link
 import com.playgendary.sportmasterss.databinding.ActivityMainBinding
 import com.playgendary.sportmasterss.gogogo.GameGameGameActivity
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         AppsFlyerLib.getInstance()
-            .init(apps_code, conversionDataListener, applicationContext)
+            .init("BzMmAqNt9L9iEwiMkXV2wT", conversionDataListener, applicationContext)
         AppsFlyerLib.getInstance().start(this)
 
     }
@@ -81,7 +80,12 @@ class MainActivity : AppCompatActivity() {
         Log.d("Data", "getDataDev: $linkView")
         val appsChecker = retroBuildTwo.getDataDev().body()?.appsChecker
         Hawk.put(appsCheck, appsChecker)
+
         Hawk.put(link, linkView)
+//        Snackbar.make(
+//            bindMainAct.root, "getDataDev: ${Hawk.get(link, "null")}",
+//            Snackbar.LENGTH_LONG
+//        ).show()
         Log.d("Data in Hawk", "getDataDev: ${Hawk.get(link, "null")}")
         Log.d("Data in Hawk", "getDataDev: ${Hawk.get(appsCheck, "null")}")
         val retroData = retroBuildTwo.getDataDev().body()?.geo
@@ -89,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         return retroData
     }
 
-    //
+
     private val job: Job = GlobalScope.launch(Dispatchers.IO) {
         val countyCode: String = getData().toString()
         val countriesPool = getDataDev().toString()
@@ -98,6 +102,7 @@ class MainActivity : AppCompatActivity() {
 
         getAdId()
         if (appsCh == "1") {
+            Log.d("lolo", " in 1")
             val executorService = Executors.newSingleThreadScheduledExecutor()
             executorService.scheduleAtFixedRate({
                 if (naming != null) {
@@ -120,9 +125,11 @@ class MainActivity : AppCompatActivity() {
             }, 0, 2, TimeUnit.SECONDS)
         }
         else if (countriesPool.contains(countyCode)) {
+            Log.d("lolo", " else if")
             startActivity(Intent(this@MainActivity, VebVieVieActivity::class.java))
             finish()
         } else {
+            Log.d("lolo", " just else")
             startActivity(Intent(this@MainActivity, GameGameGameActivity::class.java))
             finish()
         }

@@ -11,9 +11,11 @@ class GoodLikeManClass: Application() {
         const val dfwthyhyj = "43341098911299610355"
         const val jglfkdkdkgjd = "5d497a48-8705-492c-bbb2-dd703d7fdd9f"
 
-        // add for main
-        const val apps_code = "BzMmAqNt9L9iEwiMkXV2wT"
-
+        // add for easy
+//        const val apps_code = ""
+//        const val BASE_URL = ""
+//        const val BASE_URL_GEO_API = ""
+//        val PACK = ""
 
         var appsCheck = "appsChecker"
         var C1: String? = "c11"

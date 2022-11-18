@@ -4,20 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
-    tools:context=".EnteringFragment">
+    android:background="@drawable/main_back"
+    tools:context=".gogogo.EnteringFragment">
 
-    <com.airbnb.lottie.LottieAnimationView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_95"
         android:layout_width="wrap_content"
-        android:id="@+id/btn_play"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+
+    <ImageView
+        android:id="@+id/btn_machine"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/jackpotmachine"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_50"
+        app:layout_constraintDimensionRatio="1,1"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_05" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_fortune_machine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="29sp"
+        android:fontFamily="@font/montserrat_black"
+        android:gravity="center"
+        android:lines="1"
+        android:layout_marginBottom="8dp"
+        android:text="nebula machine"
+        android:textAllCaps="true"
+        android:textColor="@color/dddddddd"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintBottom_toTopOf="@id/btn_machine" />
+
+    <ImageView
+        android:id="@+id/btn_vhel"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/fortunewheel"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_95"
+        app:layout_constraintDimensionRatio="1,1"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_50" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_fortune_vheel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="29sp"
+        android:fontFamily="@font/montserrat_black"
+        android:gravity="center"
+        android:lines="1"
+        android:layout_marginBottom="8dp"
+        android:text="nebula wheel"
+        android:textAllCaps="true"
+        android:textColor="@color/dddddddd"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintBottom_toTopOf="@id/btn_vhel" />
+
+
+    <TextView
+        android:id="@+id/tv_dovn_text_raitlist_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:fontFamily="@font/montserrat_black"
+        android:text="@string/drgtdfrgtgtapp_name_author"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_500"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/play" />
+        app:layout_constraintTop_toBottomOf="@id/guideline_hor_95" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

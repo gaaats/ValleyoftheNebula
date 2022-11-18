@@ -19,12 +19,20 @@
         android:id="@+id/enteringFragment"
         android:name="com.playgendary.sportmasterss.gogogo.EnteringFragment"
         android:label="fragment_entering"
-        tools:layout="@layout/fragment_entering" >
+        tools:layout="@layout/fragment_entering">
         <action
             android:id="@+id/action_enteringFragment_to_vhelFragment"
-            app:destination="@id/vhelFragment" />
+            app:destination="@id/vhelFragment"
+            app:enterAnim="@anim/onesignal_fade_in"
+            app:exitAnim="@anim/onesignal_fade_out"
+            app:popEnterAnim="@anim/onesignal_fade_in"
+            app:popExitAnim="@anim/onesignal_fade_out" />
         <action
             android:id="@+id/action_enteringFragment_to_machineFragment"
+            app:enterAnim="@anim/onesignal_fade_in"
+            app:exitAnim="@anim/onesignal_fade_out"
+            app:popEnterAnim="@anim/onesignal_fade_in"
+            app:popExitAnim="@anim/onesignal_fade_out"
             app:destination="@id/machineFragment" />
     </fragment>
 </navigation>

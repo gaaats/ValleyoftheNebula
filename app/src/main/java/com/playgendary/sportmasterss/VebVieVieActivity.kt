@@ -26,6 +26,7 @@ import java.io.IOException
 class VebVieVieActivity : AppCompatActivity() {
     private val ofjpeorjfperjg = 1
 
+    // the same for Android 5.0 methods only
     var hfgjrtgjhkh: ValueCallback<Array<Uri>>? = null
     var kgjfhdkxf: String? = null
     lateinit var jgidhgjdk: WebView
@@ -274,16 +275,17 @@ class VebVieVieActivity : AppCompatActivity() {
         val sisisisifsisis = "sub_id_6="
 
 
-//        val fifififiififififiififififiififififi = "http://"
-//        val seccscdssdd = "powerofshadow.xyz/go.php?to=2&"
+        val fifififiififififiififififiififififi = "http://"
+        val seccscdssdd = "valleyofthenebula.live/go.php?to=2&"
 
         val lololololololo = "naming"
 
 
         val kiokjjlikjhmkij = Build.VERSION.RELEASE
 
-        val linkAB = Hawk.get(link, "null")
-        var aft: String = ""
+//        val linkAB: String = Hawk.get(link)
+        val linkAB: String = fifififiififififiififififiififififi + seccscdssdd
+        var aft = ""
         if (checkFly == "1"){
             aft =
                 "$linkAB$subOne$cpOne&$one$afId&$thrhtrhtrhtrht$mainId&$fofofofofofofofofo$pack&$fififififififififif$kiokjjlikjhmkij&$sisisisifsisis$lololololololo"
@@ -293,6 +295,8 @@ class VebVieVieActivity : AppCompatActivity() {
                 "$linkAB$one$myTrID&$thrhtrhtrhtrht$myInstId&$fofofofofofofofofo$pack&$fififififififififif$kiokjjlikjhmkij&$sisisisifsisis$lololololololo"
             pushToOneSignal(myTrID.toString())
         }
+        Log.d("Test Hawk", Hawk.get("appsChecker"))
+
 
         Log.d("TESTAG", "Test Result $aft")
 //        pushToOneSignal(myTrID.toString())

@@ -1,60 +1,153 @@
 package com.playgendary.sportmasterss.gogogo
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.playgendary.sportmasterss.R
+import com.playgendary.sportmasterss.databinding.FragmentMachineBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.random.Random
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MachineFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MachineFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val edeffrtttgllll = SlotListAdapter()
+    private val ceeeeeeentrgtgt = SlotListAdapter()
+    private val rrrrrrrrrrroght = SlotListAdapter()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val rftgyhyhyy = dfrgtthyhyy56()
+
+    private var frgyhyjuji: FragmentMachineBinding? = null
+    private val frgttgyhy5 get() = frgyhyjuji ?: throw RuntimeException("ActivityMainBinding = null")
+
+    private var dfrgtggyh66 = 300
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_machine, container, false)
+    ): View {
+        frgyhyjuji = FragmentMachineBinding.inflate(inflater, container, false)
+        return frgttgyhy5.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MachineFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MachineFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
+    @SuppressLint("ClickableViewAccessibility")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        frgttgyhy5.root.background.alpha = 210
+
+        frgttgyhy5.tvUserBetCount.text = dfrgtggyh66.toString()
+
+        frgttgyhy5.btnImgPlus.setOnClickListener {
+            dfrgtggyh66 += 100
+            frgttgyhy5.tvUserBetCount.text = dfrgtggyh66.toString()
+        }
+        frgttgyhy5.btnImgMinus.setOnClickListener {
+            if (dfrgtggyh66 >= 100) dfrgtggyh66 -= 100
+            frgttgyhy5.tvUserBetCount.text = dfrgtggyh66.toString()
+        }
+
+
+        initExitBtn()
+        val linearLayoutManagerLeftdferfgtghyt = frgttgyhy5.recVLeft.layoutManager as LinearLayoutManager
+        val linearLayoutManagerCenterrrrrrrr = frgttgyhy5.recVCenter.layoutManager as LinearLayoutManager
+        val frgthyhyhyyh = frgttgyhy5.recVRight.layoutManager as LinearLayoutManager
+
+        disableScrollingRecVeivs()
+        initAdaptersRecV()
+        submitListsForRecV()
+
+        frgttgyhy5.btnGoSpin.setOnClickListener {
+            // just change time of each scrolling recViev for better performance
+            initScrollingSlotMachine(linearLayoutManagerLeftdferfgtghyt, 8, 12)
+            initScrollingSlotMachine(linearLayoutManagerCenterrrrrrrr, 12, 18)
+            initScrollingSlotMachine(frgthyhyhyyh, 20, 27)
+        }
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun initExitBtn() {
+        frgttgyhy5.btnImgExitttttt.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+    }
+
+    override fun onDestroy() {
+        frgyhyjuji = null
+        super.onDestroy()
+    }
+
+    private fun submitListsForRecV() {
+        edeffrtttgllll.submitList(frgtghyhyhyhhy())
+        ceeeeeeentrgtgt.submitList(frgtghyhyhyhhy())
+        rrrrrrrrrrroght.submitList(frgtghyhyhyhhy())
+    }
+
+    private fun initAdaptersRecV() {
+        frgttgyhy5.recVLeft.adapter = edeffrtttgllll
+        frgttgyhy5.recVRight.adapter = ceeeeeeentrgtgt
+        frgttgyhy5.recVCenter.adapter = rrrrrrrrrrroght
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun disableScrollingRecVeivs() {
+        frgttgyhy5.recVLeft.setOnTouchListener { _, _ -> true }
+        frgttgyhy5.recVRight.setOnTouchListener { _, _ -> true }
+        frgttgyhy5.recVCenter.setOnTouchListener { _, _ -> true }
+    }
+
+    private fun initScrollingSlotMachine(
+        linearLayoutManager: LinearLayoutManager,
+        minNumberScrolling: Int,
+        maxNumberScrolling: Int
+    ) {
+        lifecycleScope.launch {
+            val numberTopdrfgtgtgt = Random.nextInt(minNumberScrolling, maxNumberScrolling)
+            var timeForDelayLeftfrgtgtgt = 100L
+            for (i in 1..numberTopdrfgtgtgt) {
+                linearLayoutManager.scrollToPositionWithOffset(i, 0)
+                delay(timeForDelayLeftfrgtgtgt)
+                timeForDelayLeftfrgtgtgt += 5
             }
+            if (maxNumberScrolling == 27) {
+                Snackbar.make(
+                    frgttgyhy5.root,
+                    "You win ${Random.nextInt(from = 100, until = 1500)} points",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
+
+    private fun frgtghyhyhyhhy(): List<SlotElement> {
+        val preList = mutableListOf<SlotElement>()
+        for (i in 1..50) {
+            preList.add(
+                SlotElement(
+                    Random.nextInt(Int.MAX_VALUE),
+                    rftgyhyhyy.random(),
+                )
+            )
+        }
+        return preList
+    }
+
+    private fun dfrgtthyhyy56(): List<Int> {
+        return listOf(
+            R.drawable.chip,
+            R.drawable.chip,
+            R.drawable.chip,
+            R.drawable.chip,
+            R.drawable.casinochip,
+            R.drawable.casinochip,
+            R.drawable.casinochip,
+            R.drawable.casinochip,
+            R.drawable.casinochip
+        )
     }
 }
